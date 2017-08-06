@@ -2,7 +2,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " From: https://stackoverflow.com/questions/1533565/how-to-get-visually-selected-text-in-vimscript
-function! GetVisualSelection()
+function! oscyank#GetVisualSelection()
     let [lnum1, col1] = getpos("'<")[1:2]
     let [lnum2, col2] = getpos("'>")[1:2]
     let lines = getline(lnum1, lnum2)
@@ -14,8 +14,8 @@ function! GetVisualSelection()
     return join(lines, "\n")
 endfunction
 
-function! Oscyank()
-  let text = GetVisualSelection()
+function! oscyank#Oscyank()
+  let text = oscyank#GetVisualSelection()
   let encodedText=text
   let encodedText=substitute(text, '\', '\\\\', "g")
   let encodedText=substitute(encodedText, "'", "'\\\\''", "g")
