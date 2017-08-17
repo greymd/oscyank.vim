@@ -17,7 +17,7 @@ Usage
 
 ### `:Oscyank`
 * Step1: Select text.
-* Step2: Type `:Oscyank` which displays `'<,'>:Oscyank`.
+* Step2: Type `:Oscyank` which displays `'<,'>Oscyank`.
 * Step3: Selected text will be stored to your clipboard through OSC.
 
 ### `:OscyankRegister`
