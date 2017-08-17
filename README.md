@@ -31,7 +31,8 @@ Usage
 Other features
 ==============
 
-Supported terminal multiplexers.
+This plugin supports not only normal terminal but also following terminal multiplexers.
+
 * [tmux](https://github.com/tmux/tmux/wiki)
 * screen
 

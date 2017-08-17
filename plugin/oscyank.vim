@@ -6,8 +6,6 @@ let g:loaded_oscyank = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! Oscyank call oscyank#Oscyank()
-
 command! -range Oscyank call oscyank#Oscyank()
 command! OscyankRegister call oscyank#OscyankRegister()
 
