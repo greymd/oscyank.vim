@@ -8,5 +8,8 @@ set cpo&vim
 
 command! Oscyank call oscyank#Oscyank()
 
+command! -range Oscyank call oscyank#Oscyank()
+command! OscyankRegister call oscyank#OscyankRegister()
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
