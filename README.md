@@ -30,8 +30,8 @@ Usage
 
 Other features
 ==============
-Supported terminal multiplexer.
-* Normal terminal
+
+Supported terminal multiplexers.
 * [tmux](https://github.com/tmux/tmux/wiki)
 * screen
 
