@@ -14,12 +14,33 @@ call dein#add('greymd/oscyank.vim')
 
 Usage
 =============
-Step1. Yank something.
-Step2. `:Oscyank` and contents in the register will be applied to your clipboard.
 
-Author's usage
+### `:Oscyank`
+* Step1: Select text.
+* Step2: `<,'>:Oscyank`
+* Step3: Selected text will be stored to your clipboard through OSC.
+
+### `:OscyankRegister`
+* Step1: Yank text.
+* Step2: Contents in the register is stored to your clipboard through OSC by executing `:OscyankRegister` .
+
+Other features
+==============
+Supported terminal multiplexer.
+* Normal terminal
+* tmux
+
+FYI: Author's usage
 =============
 
 ```
+" set spece key as a Leader
+let mapleader = "\<Space>"
 noremap <leader>y :Oscyank<cr>
 ```
+
+Select something and type `<space> + y`.
+
+License
+==============
+MIT
