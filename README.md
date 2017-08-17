@@ -3,6 +3,10 @@ oscyank.vim
 
 Clipboard integration by Operating System Controls from Vim
 
+* Clip selected text.
+* Clip text in the register.
+* Support multibyte characters.
+
 Installation
 =============
 
@@ -33,7 +37,7 @@ Supported terminal multiplexer.
 FYI: Author's usage
 =============
 
-```
+```vim
 " set spece key as a Leader
 let mapleader = "\<Space>"
 noremap <leader>y :Oscyank<cr>
