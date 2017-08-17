@@ -8,7 +8,7 @@ Installation
 
 For [dein.vim](https://github.com/Shougo/dein.vim).
 
-```
+```vim
 call dein#add('greymd/oscyank.vim')
 ```
 
@@ -28,7 +28,7 @@ Other features
 ==============
 Supported terminal multiplexer.
 * Normal terminal
-* tmux
+* [tmux](https://github.com/tmux/tmux/wiki)
 
 FYI: Author's usage
 =============
