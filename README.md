@@ -33,6 +33,7 @@ Other features
 Supported terminal multiplexer.
 * Normal terminal
 * [tmux](https://github.com/tmux/tmux/wiki)
+* screen
 
 FYI: Author's usage
 =============

@@ -7,8 +7,11 @@ function! s:OscyankPut(text)
   let executeCmd="echo -n '".encodedText."' | base64 | tr -d '\\n'"
   let encodedText=system(executeCmd)
   if $TMUX != ""
-    "tmux
+    " tmux
     let executeCmd='echo -en "\x1bPtmux;\x1b\x1b]52;;'.encodedText.'\x1b\x1b\\\\\x1b\\" > /dev/tty'
+  elseif $TERM == "screen"
+    " screen
+    let executeCmd='echo -en "\x1bP\x1b]52;;'.encodedText.'\x07\x1b\\" > /dev/tty'
   else
     let executeCmd='echo -en "\x1b]52;;'.encodedText.'\x1b\\" > /dev/tty'
   endif
