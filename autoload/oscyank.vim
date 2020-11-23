@@ -3,6 +3,9 @@ set cpo&vim
 
 function! s:OscyankPut(text)
   let encodedText=""
+  " `tty` works in vim, `tty < /proc/$$PID/fd/0` is required for neovim per
+  " https://github.com/neovim/neovim/issues/8450#issuecomment-407063983)
+  let tty = system('(tty || tty </proc/$PPID/fd/0) 2>/dev/null | grep /dev/')
   if $TMUX != ""
     let encodedText=substitute(a:text, '\', '\\', "g")
   else
@@ -13,14 +16,14 @@ function! s:OscyankPut(text)
   let encodedText=system(executeCmd)
   if $TMUX != ""
     " tmux
-    let executeCmd='echo -en "\033Ptmux;\033\033]52;;'.encodedText.'\033\033\\\\\033\\" > /dev/tty'
+    let executeCmd='echo -en "\033Ptmux;\033\033]52;;'.encodedText.'\033\033\\\\\033\\"'
   elseif $TERM == "screen"
     " screen
-    let executeCmd='echo -en "\033P\033]52;;'.encodedText.'\007\033\\" > /dev/tty'
+    let executeCmd='echo -en "\033P\033]52;;'.encodedText.'\007\033\\"'
   else
-    let executeCmd='echo -en "\033]52;;'.encodedText.'\033\\" > /dev/tty'
+    let executeCmd='echo -en "\033]52;;'.encodedText.'\033\\"'
   endif
-  call system(executeCmd)
+  call system(executeCmd . ' > ' . tty)
   redraw!
 endfunction
 
